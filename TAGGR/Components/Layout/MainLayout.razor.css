@@ -74,7 +74,7 @@ main {
         border-radius: 50%;
         margin-left: 1rem;
         cursor: pointer;
-        -webkit-user-drag: none;
+        user-select: none;
     }
 
     .top-row.auth ::deep a:first-child {

@@ -1,7 +1,14 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
+<div class="home-page" @onmouseup="releaseResizeBar" @onmousemove="resizePage">
+    <ul class="card-page" style="width: @cardPageWidth;">
+        @foreach (string card in cardItems) {
+            <li class="card-item">@card</li>
+        }
+    </ul>
+    <div class="vertical-line" @onmousedown="selectResizeBar"></div>
+    <div class="detail-page">detail</div>
+</div>
