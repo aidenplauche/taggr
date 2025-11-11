@@ -32,14 +32,32 @@ a, .btn-link {
 }
 
 .card-page{
+    /* remove bullet and indent */
+    list-style-type: none;
+    padding: 2px;
+    margin: 2px;
+
     background-color: #21965f;
+    border: 1px solid black;
+    border-width: 2px;
+    border-radius: 10px;
     align-self: stretch;
     min-width: 10vw;
     max-width: 70vw;
 }
 
+.card-item{
+    border: 1px solid black;
+    border-width: 2px;
+    border-radius: 10px;
+    min-height: 50px;
+}
+
 .detail-page{
     background-color: #21965f;
+    border: 1px solid black;
+    border-width: 2px;
+    border-radius: 10px;
     align-self: stretch;
     flex:1 ;
 }
