@@ -62,8 +62,9 @@ main {
         position: sticky;
         top: 0;
         z-index: 1;
-        justify-content: center;
+        justify-content: space-between;
     }
+
     .search-box {
         flex: 1;
         max-width: 20%;

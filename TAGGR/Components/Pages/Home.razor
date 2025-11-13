@@ -1,14 +1,32 @@
 ﻿@page "/"
 @rendermode InteractiveServer
+@using TAGGR.Components.Forms
+@using TAGGR.Components.Models
 
 <PageTitle>Home</PageTitle>
-
+<button class=button-create-card @onclick="OpenPopup">Create Card</button>
 <div class="home-page" @onmouseup="releaseResizeBar" @onmousemove="resizePage">
     <ul class="card-page" style="width: @cardPageWidth;">
-        @foreach (string card in cardItems) {
-            <li class="card-item">@card</li>
+    @* prevent null and check for values *@
+        @if (cardFormRef?.cards != null && cardFormRef?.cards.Count > 0 ) {
+            @foreach (Card card in cardFormRef.cards) {
+                <li class="card-item">@card</li>
+            }
+
         }
     </ul>
     <div class="vertical-line" @onmousedown="selectResizeBar"></div>
     <div class="detail-page">detail</div>
 </div>
+
+@* Handle bringing in the form *@
+<CreateCardForm @ref="cardFormRef" />
+
+@code {
+private CreateCardForm? cardFormRef;
+
+private void OpenPopup()
+{
+    cardFormRef?.OpenPopup();
+}
+}
