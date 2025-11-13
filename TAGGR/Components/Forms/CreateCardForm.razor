@@ -1,0 +1,30 @@
+@rendermode InteractiveServer
+
+@if (showPopup)
+{
+    <div class="cardForm-overlay" @onclick="ClosePopup">
+        <div class="cardForm-content" @onclick:stopPropagation="true">
+            <div class="cardForm-header">
+                <h4>Add New Card</h4>
+                <button class="close-button" @onclick="ClosePopup">&times;</button>
+            </div>
+            
+            <div class="cardForm-body">
+                <div class="form-group">
+                    <label>Card Name:</label>
+                    <input type="text" class="form-control" @bind="newCardName" />
+                </div>
+                
+                <div class="form-group">
+                    <label>Description:</label>
+                    <textarea class="form-control" @bind="newCardDescription" rows="3"></textarea>
+                </div>
+            </div>
+            
+            <div class="cardForm-footer">
+                <button class="cancel-button" @onclick="ClosePopup">Cancel</button>
+                <button class="save-button" @onclick="SaveCard">Save Card</button>
+            </div>
+        </div>
+    </div>
+}
